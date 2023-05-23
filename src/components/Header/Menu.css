@@ -1,0 +1,32 @@
+.MenuContainer {
+  width: 100%;
+  box-shadow: 0 4px 4px -4px #bbb;
+  height: 60px;
+  transition: opacity 0.4s, height 0.4s;
+  background-color: white;
+  position: fixed;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.MenuContainer.toggle {
+  opacity: 1;
+  height: 25vh;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.MenuDiv {
+  width: 100%;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.MenuLink {
+  text-decoration: none;
+  padding: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  color: #333;
+}
