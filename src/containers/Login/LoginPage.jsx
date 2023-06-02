@@ -1,5 +1,5 @@
 import React from "react";
-import LoginForm from "../../components/Login/LoginForm";
+import LoginForm from "./LoginForm";
 
 export const OptionItem = [
   { title: "회원가입", to: "/join" },

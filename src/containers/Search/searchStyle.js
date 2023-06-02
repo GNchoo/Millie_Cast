@@ -50,3 +50,38 @@ export const Fixed = styled.div`
   width: 100vw;
   background-color: white;
 `;
+
+export const ModalWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+`;
+
+export const ModalContent = styled.div`
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 20px;
+
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+
+  li {
+    border: 1px solid gray;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+`;

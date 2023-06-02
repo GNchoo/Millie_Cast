@@ -1,13 +1,5 @@
 import React, { useState } from "react";
-import {
-  LoginContainer,
-  LoginDiv,
-  ImageDiv,
-  LoginInput,
-  LoginBtn,
-  TextBox,
-  InputDiv,
-} from "../Login/LoginFormSty";
+import { LoginContainer, LoginDiv, ImageDiv, LoginInput, LoginBtn, TextBox, InputDiv } from "../../containers/Login/LoginFormSty";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import apiServer from "../../api/api";
@@ -59,30 +51,15 @@ const JoinForm = () => {
         <LoginInput onSubmit={handleSubmit}>
           <InputDiv>
             <div>이름</div>
-            <input
-              type="text"
-              placeholder="이름 입력"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
+            <input type="text" placeholder="이름 입력" value={name} onChange={(e) => setName(e.target.value)} />
           </InputDiv>
           <InputDiv>
             <div>아이디</div>
-            <input
-              type="id"
-              placeholder="아이디 입력"
-              value={id}
-              onChange={(e) => setId(e.target.value)}
-            />
+            <input type="id" placeholder="아이디 입력" value={id} onChange={(e) => setId(e.target.value)} />
           </InputDiv>
           <InputDiv>
             <div>비밀번호</div>
-            <input
-              type="password"
-              placeholder="비밀번호 입력"
-              value={pw}
-              onChange={(e) => setPw(e.target.value)}
-            />
+            <input type="password" placeholder="비밀번호 입력" value={pw} onChange={(e) => setPw(e.target.value)} />
           </InputDiv>
           <LoginBtn type="submit">다음</LoginBtn>
         </LoginInput>

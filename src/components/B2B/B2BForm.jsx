@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-import {
-  LoginContainer,
-  LoginDiv,
-  LoginInput,
-  InputDiv,
-} from "../Login/LoginFormSty";
+import { LoginContainer, LoginDiv, LoginInput, InputDiv } from "../../containers/Login/LoginFormSty";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ImageDiv, LinkTo, LoginBtn, TextBox, Texts, WhaleBtn } from "./B2BSty";
@@ -46,21 +41,11 @@ const B2BForm = () => {
         <LoginInput onSubmit={handleSubmit}>
           <InputDiv>
             <div>기업회원 아이디</div>
-            <input
-              type="id"
-              placeholder="아이디 입력"
-              value={id}
-              onChange={(e) => setId(e.target.value)}
-            />
+            <input type="id" placeholder="아이디 입력" value={id} onChange={(e) => setId(e.target.value)} />
           </InputDiv>
           <InputDiv>
             <div>비밀번호</div>
-            <input
-              type="password"
-              placeholder="비밀번호 입력"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            <input type="password" placeholder="비밀번호 입력" value={password} onChange={(e) => setPassword(e.target.value)} />
           </InputDiv>
           <LoginBtn type="submit">로그인</LoginBtn>
           <Texts>
@@ -70,10 +55,7 @@ const B2BForm = () => {
                 <p className="link">기업 제휴 문의</p>
               </LinkTo>
             </div>
-            <p>
-              &nbsp;· &nbsp; 비밀번호를 분실시, 회사 내 운영 담당자에게
-              문의하세요.
-            </p>
+            <p>&nbsp;· &nbsp; 비밀번호를 분실시, 회사 내 운영 담당자에게 문의하세요.</p>
           </Texts>
           <WhaleBtn>
             <img src={WhaleIcon} alt="whale icon" />
