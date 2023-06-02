@@ -1,4 +1,4 @@
-import * as S from "./bookStyle";
+import * as S from "./book.css";
 
 const Book = ({ bookData: book }) => {
   return (
@@ -20,6 +20,10 @@ const Book = ({ bookData: book }) => {
         <section>
           <S.BookInfoLabel>설명</S.BookInfoLabel>
           <S.BookInfoText>{book.contents}</S.BookInfoText>
+        </section>
+        <section>
+          <S.BookInfoLabel>설명</S.BookInfoLabel>
+          <S.BookInfoText>{book.url}</S.BookInfoText>
         </section>
       </S.RightSection>
     </S.BookSection>
