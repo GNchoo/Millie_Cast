@@ -17,14 +17,14 @@ const Book = ({ bookData: book }) => {
             ))}
           </div>
         </section>
-        <section>
+        {/* <section>
           <S.BookInfoLabel>설명</S.BookInfoLabel>
           <S.BookInfoText>{book.contents}</S.BookInfoText>
         </section>
         <section>
-          <S.BookInfoLabel>설명</S.BookInfoLabel>
+          <S.BookInfoLabel>상세페이지</S.BookInfoLabel>
           <S.BookInfoText>{book.url}</S.BookInfoText>
-        </section>
+        </section> */}
       </S.RightSection>
     </S.BookSection>
   );

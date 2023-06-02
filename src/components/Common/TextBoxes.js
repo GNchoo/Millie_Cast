@@ -1,6 +1,4 @@
 import { keyframes, styled } from "styled-components";
-import React from "react";
-import useScrollFadeIn from "./useScrollFadeIn";
 
 const fadeIn = keyframes`
   0%{
