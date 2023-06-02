@@ -1,7 +1,11 @@
 import Search from "../containers/Search/Search";
 
 const App = () => {
-  return <Search />;
+  return (
+    <>
+      <Search />;
+    </>
+  );
 };
 
 export default App;
