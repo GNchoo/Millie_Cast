@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const BookSection = styled.section`
   border: red 1px solid;
   padding: 5px;
-  height: 330px;
+  height: 250px;
   width: 150px;
   margin-bottom: 10px;
   display: flex;
@@ -35,4 +35,18 @@ export const BookInfoText = styled.p`
   border: red 1px solid;
   margin: 0;
   margin-bottom: 10px; /* 수정 */
+`;
+export const BookTitle = styled.section`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 20px;
+  font-weight: bold;
+`;
+
+export const BookAuthor = styled.section`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 15px;
 `;

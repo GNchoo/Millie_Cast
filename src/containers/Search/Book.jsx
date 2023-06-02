@@ -1,21 +1,16 @@
 import * as S from "./bookStyle";
 
 const Book = ({ bookData: book }) => {
+  const author = book.authors[0]; // 첫 번째 저자만 선택
   return (
     <S.BookSection>
       <S.BookImage src={book.thumbnail} alt="도서 미리보기" />
       <S.RightSection>
         <section>
-          <S.BookInfoLabel>제목</S.BookInfoLabel>
-          <S.BookInfoText>{book.title}</S.BookInfoText>
+          <S.BookTitle>{book.title}</S.BookTitle>
         </section>
         <section>
-          <S.BookInfoLabel>저자</S.BookInfoLabel>
-          <div>
-            {book.authors.map((name) => (
-              <S.BookInfoText key={name}>{name}</S.BookInfoText>
-            ))}
-          </div>
+          <S.BookAuthor>{author}</S.BookAuthor> {/* 첫 번째 저자만 출력 */}
         </section>
         {/* <section>
           <S.BookInfoLabel>설명</S.BookInfoLabel>
