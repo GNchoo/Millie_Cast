@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const SearchBar = styled.section`
+  border: red 1px solid;
   width: 900px;
   display: flex;
   justify-content: space-between;
@@ -29,12 +30,17 @@ export const SearchBar = styled.section`
 `;
 
 export const BookGrid = styled.div`
+  border: black 1px solid;
   display: grid;
+  grid-template-columns: repeat(5, 1fr); // 가로줄에 5개의 열(column) 생성
+  grid-auto-rows: minmax(300px, auto); // 셀의 높이 자동 조정
   justify-items: center;
+  gap: 20px;
   margin-top: 300px;
 `;
 
 export const Header = styled.header`
+  border: blue 1px solid;
   display: grid;
   align-items: center;
   justify-content: center;
@@ -44,6 +50,7 @@ export const Header = styled.header`
 `;
 
 export const Fixed = styled.div`
+  border: yellow 1px solid;
   position: fixed;
   top: 0;
   left: 0;
@@ -84,4 +91,13 @@ export const ModalContent = styled.div`
     border-radius: 5px;
     cursor: pointer;
   }
+`;
+export const ShowMoreButton = styled.button`
+  background-color: #f1f1f1;
+  color: #333;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 `;
