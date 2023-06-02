@@ -78,7 +78,7 @@ const Search = () => {
   };
 
   return (
-    <main>
+    <div>
       <S.Fixed>
         <S.Header>
           <button onClick={openModal}>{filter}</button>
@@ -117,7 +117,7 @@ const Search = () => {
           </S.ModalContent>
         </S.ModalWrapper>
       )}
-    </main>
+    </div>
   );
 };
 

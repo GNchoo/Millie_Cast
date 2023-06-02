@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const BookSection = styled.section`
   border: red 1px solid;
-  padding: 5px;
+  padding: 1px;
   height: 250px;
   width: 150px;
-  margin-bottom: 10px;
+  margin: center;
   display: flex;
   flex-direction: column; /* 추가 */
 `;
