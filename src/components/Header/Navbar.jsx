@@ -36,7 +36,7 @@ export const MainItems = [
   },
   {
     title: "검색",
-    to: "/main",
+    to: "/search",
     subitems: [],
   },
   {
