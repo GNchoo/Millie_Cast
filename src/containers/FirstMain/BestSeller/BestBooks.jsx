@@ -1,13 +1,5 @@
-import React, { useState, useEffect } from "react";
 import { BookItem } from "../../../containers/Home/BestSeller";
-import {
-  BestBooksContainer,
-  Book,
-  BookTitle,
-  BookWriter,
-  ImageContainer,
-  Text,
-} from "./BestBooksSty";
+import { BestBooksContainer, Book, BookTitle, BookWriter, ImageContainer, Text } from "./BestBooksSty";
 
 const BestBooks = () => {
   return (

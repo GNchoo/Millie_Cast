@@ -1,6 +1,6 @@
 import React from "react";
 import { AudioBookContainer, Button, Inner } from "./ObjectBookSty";
-import { TextBox } from "../../Common/TextBoxes";
+import { TextBox } from "../../../components/Common/TextBoxes";
 
 const ObjectBook = () => {
   return (
@@ -20,12 +20,7 @@ const ObjectBook = () => {
             </p>
           </div>
         </TextBox>
-        <iframe
-          title="objectBook"
-          src="https://d3udu241ivsax2.cloudfront.net/common/video/brand/objectbook.mp4"
-          width="100%"
-          height="394px"
-        />
+        <iframe title="objectBook" src="https://d3udu241ivsax2.cloudfront.net/common/video/brand/objectbook.mp4" width="100%" height="394px" />
         <Button>
           <div>오브제북 보러가기</div>
           <span class="material-symbols-outlined">arrow_forward</span>

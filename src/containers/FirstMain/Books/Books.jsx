@@ -6,7 +6,7 @@ import BookSlide1 from "../../../images/book.png";
 import BookSlide2 from "../../../images/book2.png";
 import BookSlide3 from "../../../images/book3.png";
 import { BooksContainer, ImageBox, Inner } from "./BooksSty";
-import { TextBox } from "../../Common/TextBoxes";
+import { TextBox } from "../../../components/Common/TextBoxes";
 
 SwiperCore.use(Autoplay);
 

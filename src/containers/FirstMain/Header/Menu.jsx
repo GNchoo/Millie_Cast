@@ -1,5 +1,5 @@
 import React from "react";
-import { menuItems } from "../../../containers/Home/Header";
+import { menuItems } from "./Header";
 import { Link } from "react-router-dom";
 import "./Menu.css";
 

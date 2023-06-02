@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Inner, ReviewContainer } from "./ReviewSty";
 import ReviewImg from "../../../images/review.png";
 import ReactPlayer from "react-player";
-import { TextBox } from "../../Common/TextBoxes";
+import { TextBox } from "../../../components/Common/TextBoxes";
 
 const ReviewStory = () => {
   const [playVideo, setPlayVideo] = useState(false);

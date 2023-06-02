@@ -1,4 +1,4 @@
-import * as S from "./book.css";
+import * as S from "./bookStyle";
 
 const Book = ({ bookData: book }) => {
   return (

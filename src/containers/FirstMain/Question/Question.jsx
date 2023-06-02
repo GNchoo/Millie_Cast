@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-  Inner,
-  QuestionBox,
-  QuestionContainer,
-  Questions,
-  Title,
-} from "./QuestionSty";
+import { Inner, QuestionBox, QuestionContainer, Questions, Title } from "./QuestionSty";
 
 const QuestionItem = [
   {
@@ -31,7 +25,7 @@ const QuestionItem = [
 ];
 
 const Question = () => {
-  const [targetId, setTargetId] = useState(null);
+  const [, /*targetId*/ setTargetId] = useState(null);
   const [clickButton, setClickButton] = useState({});
 
   const handleClick = (question) => {
@@ -48,18 +42,10 @@ const Question = () => {
         <Title>자주 묻는 질문</Title>
         <QuestionBox>
           {QuestionItem.map((item) => (
-            <Questions
-              key={item.question}
-              onClick={() => handleClick(item.question)}
-              selected={clickButton[item.question]}
-            >
+            <Questions key={item.question} onClick={() => handleClick(item.question)} selected={clickButton[item.question]}>
               <div className="text">
                 <p>{item.question}</p>
-                <span class="material-symbols-outlined">
-                  {!clickButton[item.question]
-                    ? "keyboard_arrow_down"
-                    : "keyboard_arrow_up"}
-                </span>
+                <span class="material-symbols-outlined">{!clickButton[item.question] ? "keyboard_arrow_down" : "keyboard_arrow_up"}</span>
               </div>
               <div
                 style={{

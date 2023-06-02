@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { bookApi } from "../../api/bookApi";
 import Book from "./Book";
-import * as S from "./search.css";
+import * as S from "./searchStyle";
 
 const Search = () => {
   const [searchData, setSearchData] = useState("");

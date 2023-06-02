@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import ReviewBg from "../../../images/reviewBg.png";
+// import ReviewBg from "../../../images/reviewBg.png";
 import ReviewBg2 from "../../../images/reviewBg2.png";
 
 export const ReviewContainer = styled.div`

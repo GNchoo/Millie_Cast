@@ -4,7 +4,7 @@ import Price2 from "../../../images/price2.png";
 import Ticket from "../../../images/ticket.png";
 import Won from "../../../images/won.png";
 import { Card, FeeBox, FeeCard, FeeContainer, Inner, Text } from "./FeeSty";
-import { TextBox } from "../../Common/TextBoxes";
+import { TextBox } from "../../../components/Common/TextBoxes";
 
 const Fee = () => {
   return (
@@ -37,9 +37,7 @@ const Fee = () => {
                   연 <span>99,000</span>
                   <span className="won">원</span>
                 </div>
-                <div className="text">
-                  밀리에서 제공하는 컨텐츠를 무제한으로
-                </div>
+                <div className="text">밀리에서 제공하는 컨텐츠를 무제한으로</div>
               </div>
             </Card>
             <Card>
