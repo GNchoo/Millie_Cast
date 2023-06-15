@@ -1,0 +1,35 @@
+[33mcommit 075acdadd0282436384f6d9665a9fdc92d6cdb8e[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: ririariris <ehrkdrb1@gmail.com>
+Date:   Thu Jun 15 10:58:04 2023 +0900
+
+    Fix large file issues using Git LFS
+
+[33mcommit a7fc1012e123f95a48c221c308eeb96b983becf5[m
+Author: ririariris <ehrkdrb1@gmail.com>
+Date:   Thu Jun 15 10:55:00 2023 +0900
+
+    처음 업로드
+
+[33mcommit 138a67d1ca0cc5da0d83c656a4e9b27c51b978a3[m
+Author: ririariris <ehrkdrb1@gmail.com>
+Date:   Thu Jun 15 10:45:10 2023 +0900
+
+    Fix issues with compiled Python files
+
+[33mcommit 1c5917887123dd55298bab4c6b241c3b95af5ec6[m
+Author: ririariris <ehrkdrb1@gmail.com>
+Date:   Thu Jun 15 10:34:09 2023 +0900
+
+    처음 업로드
+
+[33mcommit cb31ba68266dcd078c446a8be4003b62e2aa3a4d[m
+Author: ririariris <ehrkdrb1@gmail.com>
+Date:   Thu Jun 15 10:21:55 2023 +0900
+
+    처음 업로드
+
+[33mcommit 22495f1696b520a54d7953d0620acf66697b61fb[m[33m ([m[1;31morigin/do[m[33m)[m
+Author: 추경남 <127163296+GNchoo@users.noreply.github.com>
+Date:   Fri May 19 13:51:05 2023 +0900
+
+    Initial commit
