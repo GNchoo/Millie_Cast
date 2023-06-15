@@ -23,25 +23,38 @@ class FindAnswer:
 
     # 답변 검색
     def search(self, intent_name, ner_tags):
-        # 의도명, 개체명으로 답변 검색
-        sql = self._make_query(intent_name, ner_tags)
-        answer = self.db.select_one(sql)
-
-        # 검색되는 답변이 없으면 의도명만 검색
-        if answer is None:
-            sql = self._make_query(intent_name, None)
+        try:
+            # 의도명, 개체명으로 답변 검색
+            sql = self._make_query(intent_name, ner_tags)
             answer = self.db.select_one(sql)
 
-        return (answer['answer'], answer['answer_image'])
+            # 검색되는 답변이 없으면 의도명만 검색
+            if answer is None:
+                sql = self._make_query(intent_name, None)
+                answer = self.db.select_one(sql)
+
+            return answer['answer']
+
+        except Exception as e:
+            print("에러 발생:", str(e))
+            return ("죄송해요, 무슨 말인지 모르겠어요", None)
 
     # NER 태그를 실제 입력된 단어로 변환
     def tag_to_word(self, ner_predicts, answer):
-        for word, tag in ner_predicts:
+        try:
+            if self.db is None:
+                raise Exception("데이터베이스 연결 오류")
+        
+            for word, tag in ner_predicts:
 
-            # 변환해야하는 태그가 있는 경우 추가
-            if tag == 'B_BOOK' or tag == 'B_DT' or tag == 'B_TI':
-                answer = answer.replace(tag, word)
+                # 변환해야하는 태그가 있는 경우 추가
+                if tag == 'B_BOOK' or tag == 'B_DT' or tag == 'B_TI':
+                    answer = answer.replace(tag, word)
 
-        answer = answer.replace('{', '')
-        answer = answer.replace('}', '')
-        return answer
+            answer = answer.replace('{', '')
+            answer = answer.replace('}', '')
+            return answer
+        
+        except Exception as e:
+            print("에러 발생:", str(e))
+            return answer
