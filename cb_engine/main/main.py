@@ -6,7 +6,10 @@ from models.intent.intentModel import IntentModel
 from models.ner.nerModel import NerModel
 from utils.FindAnswer import FindAnswer
 from fastapi.middleware.cors import CORSMiddleware
+import uvicorn
 
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="192.168.0.157", port=8000, reload=True)
 
 app = FastAPI()
 

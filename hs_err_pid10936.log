@@ -1,0 +1,62 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_UNCAUGHT_CXX_EXCEPTION (0xe06d7363) at pc=0x00007ffbcde2cf19, pid=10936, tid=24664
+#
+# JRE version: Java(TM) SE Runtime Environment (17.0.7+8) (build 17.0.7+8-LTS-224)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (17.0.7+8-LTS-224, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# Problematic frame:
+# C  [KERNELBASE.dll+0x2cf19]
+#
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF8 -ea -Xmx1024m 
+
+Host: Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz, 8 cores, 7G,  Windows 10 , 64 bit Build 19041 (10.0.19041.3031)
+Time: Mon Jun 19 16:48:32 2023 대한민국 표준시 elapsed time: 0.929102 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000117efe5e2e0):  JavaThread "main" [_thread_in_native, id=24664, stack(0x0000001757800000,0x00000017579f0000)]
+
+Stack: [0x0000001757800000,0x00000017579f0000],  sp=0x00000017579ed1c0,  free space=1972k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [KERNELBASE.dll+0x2cf19]
+C  [VCRUNTIME140.dll+0x6220]
+C  [_jpype.cp310-win_amd64.pyd+0x3bf84]
+C  [_jpype.cp310-win_amd64.pyd+0x2afcb]
+C  0x000001178753d5a1
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.jpype.manager.TypeFactoryNative.newWrapper(JJ)V+0
+j  org.jpype.JPypeContext.newWrapper(J)V+16
+v  ~StubRoutines::call_stub
+j  org.jpype.manager.TypeFactoryNative.newWrapper(JJ)V+0
+j  org.jpype.JPypeContext.newWrapper(J)V+16
+v  ~StubRoutines::call_stub
+
+siginfo: EXCEPTION_UNCAUGHT_CXX_EXCEPTION (0xe06d7363), ExceptionInformation=0x0000000019930520 0x00000017579ed420 0x00007ffbae226db8 0x00007ffbae1c0000 
+
+
+Register to memory mapping:
+
+RIP=0x00007ffbcde2cf19 KERNELBASE.dll
+RAX=0x00000117c704cb40 points into unknown readable memory: 0x00000117eff62520 | 20 25 f6 ef 17 01 00 00
+RBX=0x00007ffbae226db8 _jpype.cp310-win_amd64.pyd
+RCX=0x00007ffbae22e000 _jpype.cp310-win_amd64.pyd
+RDX=0x00007ffbae1c0000 _jpype.cp310-win_amd64.pyd
+RSP=0x00000017579ed1c0 is pointing into the stack for thread: 0x00000117efe5e2e0
+RBP=0x00000017579ed400 is pointing into the stack for thread: 0x00000117efe5e2e0
+RSI=0x00000017579ed420 is pointing into the stack for thread: 0x00000117efe5e2e0
+RDI=0x0000000019930520 is an unknown value
+R8 =0x00000117f1d3df20 points into unknown readable memory: 0x0000000000000001 | 01 00 00 00 00 00 00 00
+R9 =0x00000017579ecb90 is pointing into the stack for thread: 0x00000117efe5e2e0
+R10=

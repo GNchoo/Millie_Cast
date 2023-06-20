@@ -35,7 +35,7 @@ val_ds = ds.skip(train_size).take(val_size).batch(20)
 test_ds = ds.skip(train_size + val_size).take(test_size).batch(20)
 
 EMB_SIZE = 128
-EPOCH = 5
+EPOCH = 10
 VOCA_SIZE = len(p.word_index) + 1
 
 # input layer
@@ -62,10 +62,10 @@ hidden = Dense(128, activation='relu')(concat)
 
 dropout_hidden= Dropout(rate= 0.5)(hidden)
 
-logit = Dense(5, name="logit")(dropout_hidden)
+logit = Dense(6, name="logit")(dropout_hidden)
 
 # 최종 노드가 5개인 이유 -> 분류하고자 하는 의도가 5개이기 떄문
-pred = Dense(5, activation='softmax')(dropout_hidden)
+pred = Dense(6, activation='softmax')(dropout_hidden)
 
 model = keras.models.Model(input_layer, pred)
 

@@ -48,7 +48,7 @@ class FindAnswer:
             for word, tag in ner_predicts:
 
                 # 변환해야하는 태그가 있는 경우 추가
-                if tag == 'B_BOOK' or tag == 'B_DT' or tag == 'B_TI':
+                if tag == 'B_BOOK':
                     answer = answer.replace(tag, word)
 
             answer = answer.replace('{', '')

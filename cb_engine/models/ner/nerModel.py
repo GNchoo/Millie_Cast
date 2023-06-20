@@ -9,8 +9,8 @@ class NerModel:
     def __init__(self, model_name, proprocess):
 
         # BIO 태그 클래스 별 레이블
-        self.index_to_ner = {1: 'O', 2: 'B_BOOK', 3: 'B_DT', 4: 'I', 5: 'B_OG', 6: 'B_PS', 7: 'B_LC', 8: 'NNP', 9: 'B_TI', 0: 'PAD'}
-
+        self.index_to_ner = {1: 'O', 2: 'B_BOOK', 3: 'I', 0: 'PAD'}
+    
         # 의도 분류 모델 불러오기
         self.model = load_model(model_name)
 
@@ -53,9 +53,9 @@ class NerModel:
         padded_seqs = tf.keras.preprocessing.sequence.pad_sequences(sequences, padding="post", value=0, maxlen=max_len)  
 
         predict = self.model.predict(np.array([padded_seqs[0]]))
-        predict_class = tf.math.argmax(predict, axis=-1)
+        predict_class = np.argmax(predict, axis=-1)
 
-        tags = [self.index_to_ner[i] for i in predict_class.numpy()[0]]
+        tags = [self.index_to_ner[i] for i in predict_class[0]]
         return list(zip(keywords, tags))
     
     @staticmethod
