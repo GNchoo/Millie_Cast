@@ -1,10 +1,13 @@
+import sys
+sys.path.append("D:/Do/Workspace/python/chatbot")
+
 from fastapi import FastAPI
-from configs.DatabaseConfig import *
-from utils.Database import Database
-from utils.preprocessing import Preprocessing
-from models.intent.intentModel import IntentModel
-from models.ner.nerModel import NerModel
-from utils.FindAnswer import FindAnswer
+from cb_engine.configs.DatabaseConfig import *
+from cb_engine.utils.Database import Database
+from cb_engine.utils.preprocessing import Preprocessing
+from cb_engine.models.intent.intentModel import IntentModel
+from cb_engine.models.ner.nerModel import NerModel
+from cb_engine.utils.FindAnswer import FindAnswer
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 import os
