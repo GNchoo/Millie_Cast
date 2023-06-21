@@ -7,9 +7,15 @@ from models.ner.nerModel import NerModel
 from utils.FindAnswer import FindAnswer
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="192.168.0.157", port=8000, reload=True)
+    host = os.getenv("host")
+    port = os.getenv("port")
+    uvicorn.run("main:app", host=host, port=int(port), reload=True)
 
 app = FastAPI()
 
