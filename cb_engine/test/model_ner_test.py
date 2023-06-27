@@ -1,5 +1,7 @@
-from utils.preprocessing import Preprocessing
-from models.ner.nerModel import NerModel
+import sys
+sys.path.append("D:/Do/Workspace/python/chatbot")
+from cb_engine.utils.preprocessing import Preprocessing
+from cb_engine.models.ner.nerModel import NerModel
 
 p = Preprocessing(word2index_dic='cb_engine/train_tools/dict/chatbot_dict.bin', userdic='cb_engine/utils/user_dic.tsv')
 

@@ -3,6 +3,8 @@ from tensorflow.keras.models import Model, load_model
 from tensorflow.keras import preprocessing
 import numpy as np
 import requests
+import redis
+import json
 
 
 class NerModel:
@@ -78,18 +80,32 @@ class NerModel:
     
     dataset = []
     
-
+    def create_redis_client(self):
+        return redis.Redis(
+            host='redis-15246.c290.ap-northeast-1-2.ec2.cloud.redislabs.com',
+            port=15246,
+            password='j0eSSufPBijBpeqVxhKS3NtixeqaTcXf'
+    )
+        
     def search_books(self, query):
         entities = self.predict(query)  # 입력된 문장에 대해 NER 수행하여 entity 추출
         book_entities = [entity for entity in entities if entity[1] == 'B_BOOK']  # 책 관련 entity 필터링
         book_names = [entity[0] for entity in book_entities]  # 추출된 책 이름들
-
+        redis_client = self.create_redis_client()
+        cache_key = f"book_names:{book_names}"
+        cached_data = redis_client.get(cache_key)
+        if cached_data:
+            # 캐시된 데이터가 존재하는 경우, 해당 데이터 반환
+            decoded_data = cached_data.decode('utf-8')
+            decoded_data = json.loads(decoded_data)
+            return decoded_data
+        
         url = "https://dapi.kakao.com/v3/search/book?target=title"
         headers = {
             "Authorization": "KakaoAK " + "6f17079cca732d80079d4b3ed644bcca"
         }
         book_names_str = ",".join(book_names)
-        response = requests.get(url, params={"query": book_names_str, "size": 50}, headers=headers)
+        response = requests.get(url, params={"query": book_names_str, "size": 10}, headers=headers)
         data = response.json()
 
         if "documents" in data:
@@ -157,8 +173,12 @@ class NerModel:
         matched_names = []
         for result in matched_results:
             matched_names.extend(result["matched_names"])
+            
+        
 
         if len(matched_results) > 0:
+            # 결과를 Redis에 캐시 저장
+            redis_client.set(cache_key, json.dumps([result["title"] for result in matched_results], ensure_ascii=False))
             return [result["title"] for result in matched_results]
         else:
             return '일치하는 결과를 찾을 수 없습니다.'
