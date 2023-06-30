@@ -9,6 +9,8 @@ from cb_engine.utils.preprocessing import Preprocessing
 from cb_engine.models.intent.intentModel import IntentModel
 from cb_engine.models.ner.nerModel import NerModel
 from cb_engine.utils.FindAnswer import FindAnswer
+from cb_engine.payment.payment import perform_payment
+from cb_engine.payment.payment import cancled_subsribe
 import uvicorn
 import os
 from dotenv import load_dotenv
@@ -56,9 +58,26 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.post("/payment")
+def payment(amount: int, customer_uid: str, buyer_email: str,
+            buyer_name: str, card_number: str, expiry: str, birth: str, pwd_2digit: str):
+    payload = {
+        'pay_method': 'card',
+        'name': '구독 서비스',
+        'amount': amount,
+        'customer_uid': customer_uid,
+        'buyer_email': buyer_email,
+        'buyer_name': buyer_name,
+        'card_number': card_number,
+        'expiry': expiry,
+        'birth': birth,
+        'pwd_2digit': pwd_2digit
+    }
+    return perform_payment(payload)
+
 @app.get("/chatbot")
-def chatbot(query: str, token: str = None):
-    start = time.time()     
+def chatbot(query: str, token: str = None, merchant_uid: str = None):
+    start = time.time()
     # 데이터베이스 객체
     db = Database(
         host=DB_HOST,
@@ -107,6 +126,23 @@ def chatbot(query: str, token: str = None):
             "ner": ner_predict,
             "answer": answer,
             "date": data  # 백엔드 API 요청 결과를 반환값에 추가
+    }
+    if intent_name == "구독 취소":
+        id = extract_user_id_from_token(token)
+        cancled_subsribe(merchant_uid, id)
+        canceled = f.cancel_subscription(id)  # 구독 취소 함수 호출
+        if canceled:
+            canceled_answer = "구독이 취소되었습니다."
+        else:
+            canceled_answer = "구독 취소에 실패했습니다."
+        end = time.time()
+        print(f"{end - start:.5f} sec")
+        return {
+            "query": query,
+            "intent": intent_name,
+            "ner": ner_predict,
+            "answer": answer,
+            "canceled_answer": canceled_answer,
     }
     else:
         end = time.time()

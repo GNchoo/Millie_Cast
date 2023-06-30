@@ -28,7 +28,7 @@ class FindAnswer:
         current_time = datetime.datetime.now()
         sql = f"SELECT *, TIMESTAMPDIFF(DAY, '{current_time}', end_date) AS remaining_days FROM subscribe WHERE member_idx = (SELECT idx FROM member WHERE id = '{id}')"
         return sql
-        
+
     # 답변 검색
     def search(self, intent_name, ner_tags):
         try:
@@ -61,6 +61,17 @@ class FindAnswer:
         except Exception as e:
             print("에러 발생:", str(e))
             return "로그인된 회원이 아닙니다."
+        
+    def cancel_subscription(self, id):
+        try:
+            select_sql = self._subscribe_query(id)
+            delete_sql = f"DELETE FROM subscribe WHERE member_idx IN (SELECT idx FROM member WHERE id = '{id}')"
+            self.db.execute(delete_sql)
+            return f"{id}의 구독이 취소되었습니다."
+        except Exception as e:
+            print("구독 취소 중 에러 발생:", str(e))
+            return "구독 정보가 없습니다."
+
 
     # NER 태그를 실제 입력된 단어로 변환
     def tag_to_word(self, ner_predicts, answer):

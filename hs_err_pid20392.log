@@ -1,0 +1,392 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:44), pid=20392, tid=15108
+#
+# JRE version:  (17.0.7+8) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (17.0.7+8-LTS-224, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF8 -ea -Xmx1024m 
+
+Host: Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz, 8 cores, 7G,  Windows 10 , 64 bit Build 19041 (10.0.19041.3031)
+Time: Fri Jun 30 16:13:20 2023 대한민국 표준시 elapsed time: 0.037620 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001f197e8d6c0):  JavaThread "Unknown thread" [_thread_in_vm, id=15108, stack(0x000000d983400000,0x000000d9835f0000)]
+
+Stack: [0x000000d983400000,0x000000d9835f0000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  0x00007ffe98866a4a
+C  0x00007ffe989c74f4
+C  0x00007ffe989c8c9e
+C  0x00007ffe989c9303
+C  0x00007ffe984352c5
+C  0x00007ffe982950a3
+C  0x00007ffe984d2c5e
+C  0x00007ffe984ca97b
+C  0x00007ffe98998fb1
+C  0x00007ffe985570e1
+C  0x00007ffe98978359
+C  0x00007ffe985da5ef
+C  0x00007ffe985dc071
+C  [_jpype.cp310-win_amd64.pyd+0x1126c]
+C  [_jpype.cp310-win_amd64.pyd+0x3f5f8]
+C  [python310.dll+0x1484bd]  cfunction_call+0x7d  (methodobject.c:554)
+C  [python310.dll+0x10571c]  _PyObject_MakeTpCall+0x13c  (call.c:215)
+C  [python310.dll+0x1fe952]  call_function+0x82  (ceval.c:5897)
+C  [python310.dll+0x1fb0ff]  _PyEval_EvalFrameDefault+0x342f  (ceval.c:4183)
+C  [python310.dll+0x1fd0db]  _PyEval_Vector+0x12b  (ceval.c:5072)
+C  [python310.dll+0x105a2e]  _PyFunction_Vectorcall+0x3e  (call.c:347)
+C  [python310.dll+0x1f6409]  _PyObject_VectorcallTstate+0x49  (abstract.h:115)
+C  [python310.dll+0x1fe952]  call_function+0x82  (ceval.c:5897)
+C  [python310.dll+0x1fb168]  _PyEval_EvalFrameDefault+0x3498  (ceval.c:4232)
+C  [python310.dll+0x1fd0db]  _PyEval_Vector+0x12b  (ceval.c:5072)
+C  [python310.dll+0x105a2e]  _PyFunction_Vectorcall+0x3e  (call.c:347)
+C  [python310.dll+0x1f6409]  _PyObject_VectorcallTstate+0x49  (abstract.h:115)
+C  [python310.dll+0x1fe952]  call_function+0x82  (ceval.c:5897)
+C  [python310.dll+0x1fb0ff]  _PyEval_EvalFrameDefault+0x342f  (ceval.c:4183)
+C  [python310.dll+0x1fd0db]  _PyEval_Vector+0x12b  (ceval.c:5072)
+C  [python310.dll+0x105a2e]  _PyFunction_Vectorcall+0x3e  (call.c:347)
+C  [python310.dll+0x105561]  _PyObject_FastCallDictTstate+0xb1  (call.c:155)
+C  [python310.dll+0x105ca2]  _PyObject_Call_Prepend+0xa2  (call.c:431)
+C  [python310.dll+0x17064b]  slot_tp_init+0xeb  (typeobject.c:7735)
+C  [python310.dll+0x16432b]  type_call+0x12b  (typeobject.c:1136)
+C  [python310.dll+0x10571c]  _PyObject_MakeTpCall+0x13c  (call.c:215)
+C  [python310.dll+0x1fe952]  call_function+0x82  (ceval.c:5897)
+C  [python310.dll+0x1fb168]  _PyEval_EvalFrameDefault+0x3498  (ceval.c:4232)
+C  [python310.dll+0x1fd0db]  _PyEval_Vector+0x12b  (ceval.c:5072)
+C  [python310.dll+0x105a2e]  _PyFunction_Vectorcall+0x3e  (call.c:347)
+C  [python310.dll+0x105561]  _PyObject_FastCallDictTstate+0xb1  (call.c:155)
+C  [python310.dll+0x105ca2]  _PyObject_Call_Prepend+0xa2  (call.c:431)
+C  [python310.dll+0x17064b]  slot_tp_init+0xeb  (typeobject.c:7735)
+C  [python310.dll+0x16432b]  type_call+0x12b  (typeobject.c:1136)
+C  [python310.dll+0x10571c]  _PyObject_MakeTpCall+0x13c  (call.c:215)
+C  [python310.dll+0x1fe952]  call_function+0x82  (ceval.c:5897)
+C  [python310.dll+0x1fb168]  _PyEval_EvalFrameDefault+0x3498  (ceval.c:4232)
+C  [python310.dll+0x1fd0db]  _PyEval_Vector+0x12b  (ceval.c:5072)
+C  [python310.dll+0x1f7b22]  PyEval_EvalCode+0x82  (ceval.c:1135)
+C  [python310.dll+0x1f2b7b]  builtin_exec_impl+0x23b  (bltinmodule.c:1057)
+C  [python310.dll+0x148118]  cfunction_vectorcall_FASTCALL+0x78  (methodobject.c:431)
+C  [python310.dll+0x1f6409]  _PyObject_VectorcallTstate+0x49  (abstract.h:115)
+C  [python310.dll+0x1fe952]  call_function+0x82  (ceval.c:5897)
+C  [python310.dll+0x1fab42]  _PyEval_EvalFrameDefault+0x2e72  (ceval.c:4214)
+C  [python310.dll+0x1fd0db]  _PyEval_Vector+0x12b  (ceval.c:5072)
+C  [python310.dll+0x105a2e]  _PyFunction_Vectorcall+0x3e  (call.c:347)
+C  [python310.dll+0x1f6409]  _PyObject_VectorcallTstate+0x49  (abstract.h:115)
+C  [python310.dll+0x1fe952]  call_function+0x82  (ceval.c:5897)
+C  [python310.dll+0x1fab42]  _PyEval_EvalFrameDefault+0x2e72  (ceval.c:4214)
+C  [python310.dll+0x1fd0db]  _PyEval_Vector+0x12b  (ceval.c:5072)
+C  [python310.dll+0x105a2e]  _PyFunction_Vectorcall+0x3e  (call.c:347)
+C  [python310.dll+0x1f6409]  _PyObject_VectorcallTstate+0x49  (abstract.h:115)
+C  [python310.dll+0x1fe952]  call_function+0x82  (ceval.c:5897)
+C  [python310.dll+0x1fb168]  _PyEval_EvalFrameDefault+0x3498  (ceval.c:4232)
+C  [python310.dll+0x1fd0db]  _PyEval_Vector+0x12b  (ceval.c:5072)
+C  [python310.dll+0x105a2e]  _PyFunction_Vectorcall+0x3e  (call.c:347)
+C  [python310.dll+0x1f6409]  _PyObject_VectorcallTstate+0x49  (abstract.h:115)
+C  [python310.dll+0x1fe952]  call_function+0x82  (ceval.c:5897)
+C  [python310.dll+0x1fb168]  _PyEval_EvalFrameDefault+0x3498  (ceval.c:4232)
+C  [python310.dll+0x1fd0db]  _PyEval_Vector+0x12b  (ceval.c:5072)
+C  [python310.dll+0x105a2e]  _PyFunction_Vectorcall+0x3e  (call.c:347)
+C  [python310.dll+0x1f6409]  _PyObject_VectorcallTstate+0x49  (abstract.h:115)
+C  [python310.dll+0x1fe952]  call_function+0x82  (ceval.c:5897)
+C  [python310.dll+0x1fab42]  _PyEval_EvalFrameDefault+0x2e72  (ceval.c:4214)
+C  [python310.dll+0x1fd0db]  _PyEval_Vector+0x12b  (ceval.c:5072)
+C  [python310.dll+0x105a2e]  _PyFunction_Vectorcall+0x3e  (call.c:347)
+C  [python310.dll+0x1f6409]  _PyObject_VectorcallTstate+0x49  (abstract.h:115)
+C  [python310.dll+0x1fe952]  call_function+0x82  (ceval.c:5897)
+C  [python310.dll+0x1fab42]  _PyEval_EvalFrameDefault+0x2e72  (ceval.c:4214)
+C  [python310.dll+0x1fd0db]  _PyEval_Vector+0x12b  (ceval.c:5072)
+C  [python310.dll+0x105a2e]  _PyFunction_Vectorcall+0x3e  (call.c:347)
+C  [python310.dll+0x1f6409]  _PyObject_VectorcallTstate+0x49  (abstract.h:115)
+C  [python310.dll+0x1fe952]  call_function+0x82  (ceval.c:5897)
+C  [python310.dll+0x1fab42]  _PyEval_EvalFrameDefault+0x2e72  (ceval.c:4214)
+C  [python310.dll+0x1fd0db]  _PyEval_Vector+0x12b  (ceval.c:5072)
+C  [python310.dll+0x105a2e]  _PyFunction_Vectorcall+0x3e  (call.c:347)
+C  [python310.dll+0x1f6409]  _PyObject_VectorcallTstate+0x49  (abstract.h:115)
+C  [python310.dll+0x1fe952]  call_function+0x82  (ceval.c:5897)
+C  [python310.dll+0x1fb168]  _PyEval_EvalFrameDefault+0x3498  (ceval.c:4232)
+C  [python310.dll+0x1fd0db]  _PyEval_Vector+0x12b  (ceval.c:5072)
+C  [python310.dll+0x1f7b22]  PyEval_EvalCode+0x82  (ceval.c:1135)
+C  [python310.dll+0x26e0fe]  run_eval_code_obj+0xae  (pythonrun.c:1292)
+C  [python310.dll+0x26e1d8]  run_mod+0x98  (pythonrun.c:1313)
+C  [python310.dll+0x26dca9]  PyRun_StringFlags+0x89  (pythonrun.c:1183)
+C  [python310.dll+0x26c28b]  PyRun_SimpleStringFlags+0xbb  (pythonrun.c:503)
+C  [python310.dll+0x88ef7]  pymain_run_python+0x427  (main.c:582)
+C  [python310.dll+0x89e93]  pymain_main+0x53  (main.c:1066)
+C  [python310.dll+0x89f06]  Py_Main+0x26  (main.c:1079)
+C  [python.exe+0x1494]  __scrt_common_main_seh+0x10c  (exe_common.inl:288)
+...<more frames>...
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffe98ca4998, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000001f1977bc430 GCTaskThread "GC Thread#0" [stack: 0x000000d9856e0000,0x000000d9858d0000] [id=33340]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffe984d7bd0]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000001f187550cf0] Heap_lock - owner thread: 0x000001f197e8d6c0
+
+Heap address: 0x00000000c0000000, size: 1024 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x00000000c0000000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffe988c00b9]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (1 events):
+Event: 0.019 Loaded shared library C:\Program Files\Java\jdk-17\bin\java.dll
+
+
+Dynamic libraries:
+0x00007ff76f7a0000 - 0x00007ff76f7bb000 	C:\Users\oem\anaconda3\python.exe
+0x00007ffecc2d0000 - 0x00007ffecc4c8000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffecc1d0000 - 0x00007ffecc28f000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffec9bf0000 - 0x00007ffec9ee6000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffeca040000 - 0x00007ffeca140000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffe7ce80000 - 0x00007ffe7d31c000 	C:\Users\oem\anaconda3\python310.dll
+0x00007ffebd650000 - 0x00007ffebd669000 	C:\Users\oem\anaconda3\VCRUNTIME140.dll
+0x00007ffecb010000 - 0x00007ffecb07b000 	C:\Windows\System32\WS2_32.dll
+0x00007ffecb260000 - 0x00007ffecb386000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffeca4d0000 - 0x00007ffeca57f000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffeca9f0000 - 0x00007ffecaa8e000 	C:\Windows\System32\msvcrt.dll
+0x00007ffebdd40000 - 0x00007ffebdd4a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffecaea0000 - 0x00007ffecaf3c000 	C:\Windows\System32\sechost.dll
+0x00007ffeb88a0000 - 0x00007ffeb88ba000 	C:\Users\oem\anaconda3\zlib.dll
+0x00007ffec9600000 - 0x00007ffec9618000 	C:\Windows\SYSTEM32\CRYPTSP.dll
+0x00007ffec8960000 - 0x00007ffec8994000 	C:\Windows\system32\rsaenh.dll
+0x00007ffeca010000 - 0x00007ffeca037000 	C:\Windows\System32\bcrypt.dll
+0x00007ffec91b0000 - 0x00007ffec91bc000 	C:\Windows\SYSTEM32\CRYPTBASE.dll
+0x00007ffeca140000 - 0x00007ffeca1c2000 	C:\Windows\System32\bcryptPrimitives.dll
+0x000001f1ef610000 - 0x000001f1ef61f000 	C:\Users\oem\anaconda3\python3.DLL
+0x00007ffeb5d80000 - 0x00007ffeb5d96000 	C:\Users\oem\anaconda3\DLLs\_socket.pyd
+0x00007ffec8d30000 - 0x00007ffec8d6c000 	C:\Windows\SYSTEM32\IPHLPAPI.DLL
+0x00007ffebd640000 - 0x00007ffebd649000 	C:\Users\oem\anaconda3\DLLs\select.pyd
+0x00007ffea5d20000 - 0x00007ffea5d48000 	C:\Users\oem\anaconda3\DLLs\_ssl.pyd
+0x00007ffeca1d0000 - 0x00007ffeca32e000 	C:\Windows\System32\CRYPT32.dll
+0x00007ffea1030000 - 0x00007ffea10dd000 	C:\Users\oem\anaconda3\Library\bin\libssl-1_1-x64.dll
+0x00007ffe93580000 - 0x00007ffe938ce000 	C:\Users\oem\anaconda3\Library\bin\libcrypto-1_1-x64.dll
+0x00007ffecac40000 - 0x00007ffecaddd000 	C:\Windows\System32\USER32.dll
+0x00007ffec9ab0000 - 0x00007ffec9ad2000 	C:\Windows\System32\win32u.dll
+0x00007ffecb0e0000 - 0x00007ffecb10c000 	C:\Windows\System32\GDI32.dll
+0x00007ffec9ef0000 - 0x00007ffeca005000 	C:\Windows\System32\gdi32full.dll
+0x00007ffec9b50000 - 0x00007ffec9bed000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffecb410000 - 0x00007ffecb440000 	C:\Windows\System32\IMM32.DLL
+0x00007ffeaf430000 - 0x00007ffeaf441000 	C:\Users\oem\anaconda3\DLLs\_asyncio.pyd
+0x00007ffeb28a0000 - 0x00007ffeb28ae000 	C:\Users\oem\anaconda3\DLLs\_overlapped.pyd
+0x00007ffec9020000 - 0x00007ffec908a000 	C:\Windows\system32\mswsock.dll
+0x00007ffeb6190000 - 0x00007ffeb619a000 	C:\Users\oem\anaconda3\DLLs\_bz2.pyd
+0x00007ffeb3980000 - 0x00007ffeb39b2000 	C:\Users\oem\anaconda3\Library\bin\LIBBZ2.dll
+0x00007ffeb5d70000 - 0x00007ffeb5d7d000 	C:\Users\oem\anaconda3\DLLs\_lzma.pyd
+0x00007ffeaef80000 - 0x00007ffeaefaa000 	C:\Users\oem\anaconda3\Library\bin\liblzma.dll
+0x00007ffec0df0000 - 0x00007ffec0dfe000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pydantic\__init__.cp310-win_amd64.pyd
+0x00007ffebffc0000 - 0x00007ffebfff2000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pydantic\dataclasses.cp310-win_amd64.pyd
+0x00007ffeb3570000 - 0x00007ffeb35a2000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pydantic\class_validators.cp310-win_amd64.pyd
+0x00007ffebaab0000 - 0x00007ffebaae0000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pydantic\errors.cp310-win_amd64.pyd
+0x00007ffea0fe0000 - 0x00007ffea1022000 	C:\Users\oem\anaconda3\DLLs\_decimal.pyd
+0x00007ffeb12e0000 - 0x00007ffeb1315000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pydantic\typing.cp310-win_amd64.pyd
+0x00007ffeaefd0000 - 0x00007ffeaf01c000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pydantic\utils.cp310-win_amd64.pyd
+0x00007ffebd470000 - 0x00007ffebd482000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pydantic\version.cp310-win_amd64.pyd
+0x00007ffebd060000 - 0x00007ffebd078000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pydantic\config.cp310-win_amd64.pyd
+0x00007ffeb3ba0000 - 0x00007ffeb3bc1000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pydantic\error_wrappers.cp310-win_amd64.pyd
+0x00007ffebccc0000 - 0x00007ffebccd6000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pydantic\json.cp310-win_amd64.pyd
+0x00007ffeb1050000 - 0x00007ffeb1057000 	C:\Users\oem\anaconda3\DLLs\_uuid.pyd
+0x00007ffeb1170000 - 0x00007ffeb11ab000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pydantic\color.cp310-win_amd64.pyd
+0x00007ffea89c0000 - 0x00007ffea8a01000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pydantic\networks.cp310-win_amd64.pyd
+0x00007ffea8970000 - 0x00007ffea89b7000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pydantic\validators.cp310-win_amd64.pyd
+0x00007ffebac90000 - 0x00007ffebacac000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pydantic\datetime_parse.cp310-win_amd64.pyd
+0x00007ffea45a0000 - 0x00007ffea45ff000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pydantic\types.cp310-win_amd64.pyd
+0x00007ffea1de0000 - 0x00007ffea1e43000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pydantic\fields.cp310-win_amd64.pyd
+0x00007ffea1d80000 - 0x00007ffea1ddf000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pydantic\main.cp310-win_amd64.pyd
+0x00007ffeb3950000 - 0x00007ffeb3961000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pydantic\parse.cp310-win_amd64.pyd
+0x00007ffea1d20000 - 0x00007ffea1d7b000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pydantic\schema.cp310-win_amd64.pyd
+0x00007ffeb1510000 - 0x00007ffeb1525000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pydantic\annotated_types.cp310-win_amd64.pyd
+0x00007ffea28c0000 - 0x00007ffea28e7000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pydantic\decorator.cp310-win_amd64.pyd
+0x00007ffea1cf0000 - 0x00007ffea1d1f000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pydantic\env_settings.cp310-win_amd64.pyd
+0x00007ffeb12c0000 - 0x00007ffeb12d5000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pydantic\tools.cp310-win_amd64.pyd
+0x00007ffebadf0000 - 0x00007ffebadf9000 	C:\Users\oem\anaconda3\DLLs\_queue.pyd
+0x00007ffeb14f0000 - 0x00007ffeb1500000 	C:\Users\oem\anaconda3\DLLs\_hashlib.pyd
+0x00007ffea1c70000 - 0x00007ffea1ce4000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\_jpype.cp310-win_amd64.pyd
+0x00007ffeb3930000 - 0x00007ffeb393c000 	C:\Users\oem\anaconda3\VCRUNTIME140_1.dll
+0x00007ffea11e0000 - 0x00007ffea1271000 	C:\Users\oem\anaconda3\MSVCP140.dll
+0x00007ffea11a0000 - 0x00007ffea11d2000 	C:\Users\oem\anaconda3\DLLs\pyexpat.pyd
+0x00007ffeb08e0000 - 0x00007ffeb08e9000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\win32\_win32sysloader.pyd
+0x00007ffea4560000 - 0x00007ffea4585000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pywin32_system32\pywintypes310.dll
+0x00007ffeca390000 - 0x00007ffeca4ba000 	C:\Windows\System32\ole32.dll
+0x00007ffecb440000 - 0x00007ffecb794000 	C:\Windows\System32\combase.dll
+0x00007ffecaf40000 - 0x00007ffecb00d000 	C:\Windows\System32\OLEAUT32.dll
+0x00007ffea0c80000 - 0x00007ffea0d30000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pywin32_system32\pythoncom310.dll
+0x00007ffec7840000 - 0x00007ffec7852000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ffec7370000 - 0x00007ffec740e000 	C:\Windows\system32\uxtheme.dll
+0x00007ffebc1a0000 - 0x00007ffebc38c000 	C:\Windows\SYSTEM32\urlmon.dll
+0x00007ffebc4d0000 - 0x00007ffebc781000 	C:\Windows\SYSTEM32\iertutil.dll
+0x00007ffecadf0000 - 0x00007ffecae9d000 	C:\Windows\System32\shcore.dll
+0x00007ffebc170000 - 0x00007ffebc198000 	C:\Windows\SYSTEM32\srvcli.dll
+0x00007ffec8e40000 - 0x00007ffec8e4c000 	C:\Windows\SYSTEM32\netutils.dll
+0x00007ffea17f0000 - 0x00007ffea1815000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\win32\win32api.pyd
+0x00007ffecb9f0000 - 0x00007ffecc134000 	C:\Windows\System32\SHELL32.dll
+0x00007ffeb9940000 - 0x00007ffeb994c000 	C:\Windows\SYSTEM32\secur32.dll
+0x00007ffec9870000 - 0x00007ffec98a2000 	C:\Windows\SYSTEM32\SSPICLI.DLL
+0x00007ffeb39c0000 - 0x00007ffeb39e0000 	C:\Users\oem\anaconda3\DLLs\_ctypes.pyd
+0x00007ffebac80000 - 0x00007ffebac8c000 	C:\Users\oem\anaconda3\Library\bin\ffi.dll
+0x00007ffebf750000 - 0x00007ffebf759000 	C:\Users\oem\anaconda3\msvcp140_1.dll
+0x00007ffe2e730000 - 0x00007ffe56221000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\_pywrap_tensorflow_internal.pyd
+0x00007ffecb110000 - 0x00007ffecb118000 	C:\Windows\System32\Normaliz.dll
+0x00007ffecb990000 - 0x00007ffecb9e5000 	C:\Windows\System32\SHLWAPI.dll
+0x00007ffeb9bc0000 - 0x00007ffeb9da4000 	C:\Windows\SYSTEM32\dbghelp.dll
+0x0000000070200000 - 0x0000000072088000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\numpy\.libs\libopenblas.FB5AE2TYXYH2IJRDKGDGQ3XBKLKTF43H.gfortran-win_amd64.dll
+0x00007ffe8f5e0000 - 0x00007ffe8f895000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\numpy\core\_multiarray_umath.cp310-win_amd64.pyd
+0x00007ffeb1060000 - 0x00007ffeb1075000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\numpy\core\_multiarray_tests.cp310-win_amd64.pyd
+0x00007ffeaefb0000 - 0x00007ffeaefcd000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\numpy\linalg\_umath_linalg.cp310-win_amd64.pyd
+0x00007ffea8950000 - 0x00007ffea896f000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\numpy\fft\_pocketfft_internal.cp310-win_amd64.pyd
+0x00007ffea1110000 - 0x00007ffea119a000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\numpy\random\mtrand.cp310-win_amd64.pyd
+0x00007ffea1c40000 - 0x00007ffea1c66000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\numpy\random\bit_generator.cp310-win_amd64.pyd
+0x00007ffea1c10000 - 0x00007ffea1c3d000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\numpy\random\_common.cp310-win_amd64.pyd
+0x00007ffea17b0000 - 0x00007ffea17ea000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\numpy\random\_bounded_integers.cp310-win_amd64.pyd
+0x00007ffea28a0000 - 0x00007ffea28b5000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\numpy\random\_mt19937.cp310-win_amd64.pyd
+0x00007ffea1790000 - 0x00007ffea17a3000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\numpy\random\_philox.cp310-win_amd64.pyd
+0x00007ffea0f40000 - 0x00007ffea0f56000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\numpy\random\_pcg64.cp310-win_amd64.pyd
+0x00007ffebf6f0000 - 0x00007ffebf700000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\numpy\random\_sfc64.cp310-win_amd64.pyd
+0x00007ffea0d30000 - 0x00007ffea0dd1000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\numpy\random\_generator.cp310-win_amd64.pyd
+0x00007ffea0c60000 - 0x00007ffea0c7d000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\google\protobuf\internal\_api_implementation.cp310-win_amd64.pyd
+0x00007ffea05b0000 - 0x00007ffea0742000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\google\protobuf\pyext\_message.cp310-win_amd64.pyd
+0x00007ffe9d390000 - 0x00007ffe9d419000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\_pywrap_tfe.pyd
+0x00007ffe7cad0000 - 0x00007ffe7ce79000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\platform\_pywrap_tf2.pyd
+0x00007ffe7c680000 - 0x00007ffe7cac2000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\client\_pywrap_tf_session.pyd
+0x00007ffe9c200000 - 0x00007ffe9c324000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\util\_tf_stack.pyd
+0x00007ffeb3940000 - 0x00007ffeb394e000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\wrapt\_wrappers.cp310-win_amd64.pyd
+0x00007ffe9e5d0000 - 0x00007ffe9e602000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\util\_pywrap_utils.pyd
+0x00007ffea0590000 - 0x00007ffea05b0000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\util\_pywrap_nest.pyd
+0x00007ffe9dc70000 - 0x00007ffe9dc92000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\_pywrap_py_exception_registry.pyd
+0x00007ffe8efa0000 - 0x00007ffe8f225000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\framework\_dtypes.pyd
+0x00007ffea0340000 - 0x00007ffea0360000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\lib\core\_pywrap_bfloat16.pyd
+0x00007ffe9e5b0000 - 0x00007ffe9e5d0000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\lib\core\_pywrap_custom_casts.pyd
+0x00007ffe9d370000 - 0x00007ffe9d390000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\lib\core\_pywrap_float8.pyd
+0x00007ffe9c990000 - 0x00007ffe9c9b9000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\profiler\internal\_pywrap_traceme.pyd
+0x00007ffe9c950000 - 0x00007ffe9c990000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\framework\_pywrap_python_api_dispatcher.pyd
+0x00007ffe7c2d0000 - 0x00007ffe7c679000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\framework\_op_def_registry.pyd
+0x00007ffe826e0000 - 0x00007ffe82994000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\flags_pybind.pyd
+0x00007ffe7bf10000 - 0x00007ffe7c2c6000 	D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\framework\_op_def_library_pybind.pyd
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\oem\anaconda3;C:\Windows\SYSTEM32;C:\Users\oem\anaconda3\DLLs;C:\Users\oem\anaconda3\Library\bin;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pydantic;D:\Do\Workspace\python\chatbot\venv\lib\site-packages;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\win32;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pywin32_system32;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\numpy\.libs;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\numpy\core;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\numpy\linalg;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\numpy\fft;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\numpy\random;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\google\protobuf\internal;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\google\protobuf\pyext;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\platform;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\client;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\util;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\wrapt;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\framework;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\lib\core;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\profiler\internal;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\lib\io;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\data\experimental\service;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\saved_model;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\compiler\tf2tensorrt;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\python\grappler;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\h5py;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\scipy\_lib;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\scipy\sparse;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\scipy\sparse\linalg\_isolve;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\scipy.libs;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\scipy\linalg;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\scipy\sparse\linalg\_dsolve;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\scipy\sparse\linalg\_eigen\arpack;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\scipy\sparse\csgraph;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\lite\python\metrics;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\lite\experimental\microfrontend\python\ops;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\lite\python\interpreter_wrapper;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\tensorflow\lite\python\analyzer_wrapper;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pandas\_libs;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pandas\_libs\tslibs;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\pandas\_libs\window;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\scipy\ndimage;D:\Do\Workspace\python\chatbot\venv\lib\site-packages\scipy\special;C:\Program Files\Java\jdk-17\bin\server;C:\Program Files\Java\jdk-17\bin
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF8 -ea -Xmx1024m 
+java_command: <unknown>
+java_class_path (initial): D:\Do\Workspace\python\chatbot\venv\Lib\site-packages\konlpy\java;D:\Do\Workspace\python\chatbot\venv\Lib\site-packages\konlpy\java\bin;D:\Do\Workspace\python\chatbot\venv\Lib\site-packages\konlpy\java\aho-corasick.jar;D:\Do\Workspace\python\chatbot\venv\Lib\site-packages\konlpy\java\jhannanum-0.8.4.jar;D:\Do\Workspace\python\chatbot\venv\Lib\site-packages\konlpy\java\kkma-2.0.jar;D:\Do\Workspace\python\chatbot\venv\Lib\site-packages\konlpy\java\komoran-3.0.jar;D:\Do\Workspace\python\chatbot\venv\Lib\site-packages\konlpy\java\open-korean-text-2.1.0.jar;D:\Do\Workspace\python\chatbot\venv\Lib\site-packages\konlpy\java\scala-library-2.12.3.jar;D:\Do\Workspace\python\chatbot\venv\Lib\site-packages\konlpy\java\shineware-common-1.0.jar;D:\Do\Workspace\python\chatbot\venv\Lib\site-packages\konlpy\java\shineware-ds-1.0.jar;D:\Do\Workspace\python\chatbot\venv\Lib\site-packages\konlpy\java\snakeyaml-1.12.jar;D:\Do\Workspace\python\chatbot\venv\Lib\site-packages\konlpy\java\twitter-text-1.14.7.jar;D:\Do\Workspace\python\chatbot\venv\Lib\site-packages\konlpy\java\jhannanum-0.8.4.jar;D:\Do\Workspace\python\chatbot\venv\Lib\site-packages\konlpy\java\kkma-2.0.jar;D:\Do\Workspace\python\chatbot\venv\Lib\site-packages\konlpy\java\aho-corasick.jar;D:\Do\Workspace\python\chatbot\venv\Lib\site-packages\konlpy\java\shineware-common-1.0.jar;D:\Do\Workspace\python\chatbot\venv\Lib\site-packages\konlpy\java\shineware-ds-1.0.jar;D:\Do\Workspace\python\chatbot\venv\Lib\site-packages\konlpy\java\komoran-3.0.jar;D:\Do\Workspace\python\chatbot\venv\Lib\site-packages\konlpy\java\snakeyaml-1.12.jar;D:\Do\Workspace\python\chatbot\venv\Lib\site-packages\konlpy\java\scala-library-2.12.3.jar;D:\Do\Workspace\python\chatbot\venv\Lib\site-packages\konlpy\java\open-korean-text-2.1.0.jar;D:\Do\Workspace\python\chatbot\venv\Lib\site-packages\konlpy\java\twitter-text-1.14.7.jar;D:\Do\Workspace\python\chatbot\venv\Lib\site-packages\konlpy\java\aho-corasick.jar;D:\Do\Workspace\py
+Launcher Type: generic
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 134217728                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 1073741824                                {product} {command line}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 1073741824                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-17
+CLASSPATH=.;C:\Users\oem\eclipse-workspace;".;C:\Program Files\Java\jdk-17lib%tools.jar";
+PATH=D;D:\Do\Workspace\python\chatbot\venv\Scripts;C:\Users\oem\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\oem\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;%CATALINA_HOEM%\bin;C:\Program Files\Java\jdk-17\bin;C:\Program Files\Bandizip;C:\Program Files\PuTTY;C:\spring\apache-maven-3.9.0\bin;C:\spring\gradle-8.0.2\bin;C:\Users\oem\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\Program Files\Graphviz\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Users\oem\anaconda3;C:\Users\oem\anaconda3\Library\mingw-w64\bin;C:\Users\oem\anaconda3\Library\usr\bin;C:\Users\oem\anaconda3\Library\bin;C:\Users\oem\anaconda3\Scripts;C:\Users\oem\AppData\Local\Programs\Python\Python311\Scripts;C:\Users\oem\AppData\Local\Programs\Python\Python311;C:\Users\oem\AppData\Local\Microsoft\WindowsApps;C:\Users\oem\AppData\Local\Programs\Microsoft VS Code\bin;C:\ProgramData\oem\GitHubDesktop\bin;C:\Users\oem\AppData\Local\GitHubDesktop\bin;C:\Program Files\heroku\bin;C:\Users\oem\AppData\Roaming\npm;C:\Users\oem\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1.2\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+USERNAME=oem
+SHELL=C:\Program Files\Git\usr\bin\bash.exe
+DISPLAY=needs-to-be-defined
+LANG=ko_KR.UTF-8
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.3031)
+OS uptime: 4 days 7:05 hours
+Hyper-V role detected
+
+CPU: total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 58 stepping 9 microcode 0x21, cx8, cmov, fxsr, ht, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, tsc, tscinvbit, avx, aes, erms, clmul, vzeroupper, clflush, hv
+
+Memory: 4k page, system-wide physical 8156M (725M free)
+TotalPageFile size 19523M (AvailPageFile size 99M)
+current process WorkingSet (physical memory assigned to process): 292M, peak: 292M
+current process commit charge ("private bytes"): 744M, peak: 744M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (17.0.7+8-LTS-224) for windows-amd64 JRE (17.0.7+8-LTS-224), built on Feb 28 2023 23:03:02 by "mach5one" with MS VC++ 17.1 (VS2022)
+
+END.
