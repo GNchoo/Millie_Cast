@@ -129,12 +129,20 @@ def chatbot(query: str, token: str = None, merchant_uid: str = None):
     }
     if intent_name == "구독 취소":
         id = extract_user_id_from_token(token)
-        cancled_subsribe(merchant_uid, id)
-        canceled = f.cancel_subscription(id)  # 구독 취소 함수 호출
-        if canceled:
-            canceled_answer = "구독이 취소되었습니다."
-        else:
-            canceled_answer = "구독 취소에 실패했습니다."
+        canceled_answer = "구독 정보가 없습니다."  # 초기화
+
+        try:
+            cancled_subsribe(merchant_uid, id)
+            canceled = f.cancel_subscription(id)  # 구독 취소 함수 호출
+
+            if canceled:
+                canceled_answer = "구독이 취소되었습니다."
+            else:
+                canceled_answer = "구독 취소에 실패했습니다."
+
+        except KeyError:
+            canceled_answer = "구독 정보가 없습니다."
+
         end = time.time()
         print(f"{end - start:.5f} sec")
         return {
@@ -143,7 +151,7 @@ def chatbot(query: str, token: str = None, merchant_uid: str = None):
             "ner": ner_predict,
             "answer": answer,
             "canceled_answer": canceled_answer,
-    }
+        }
     else:
         end = time.time()
         print(f"{end - start:.5f} sec")
