@@ -17,7 +17,6 @@ export const Title = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
   p {
     font-size: 19px;
     font-weight: 800;
@@ -47,7 +46,6 @@ export const MainRoad = styled.div`
   overflow: hidden;
   border-radius: 10px;
   position: relative;
-  cursor: pointer;
   .image {
     width: 100%;
   }
@@ -91,7 +89,6 @@ export const Road = styled.div`
   margin-left: 15px;
   border-radius: 10px;
   overflow: hidden;
-  cursor: pointer;
   .thumbnail {
     height: 100px;
     overflow: hidden;

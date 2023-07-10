@@ -16,7 +16,6 @@ export const Title = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
   p {
     font-size: 19px;
     font-weight: 800;
@@ -41,7 +40,6 @@ export const Clips = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
     img {
       width: 30px;
       margin-bottom: 8px;

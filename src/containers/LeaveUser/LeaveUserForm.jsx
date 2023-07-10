@@ -54,11 +54,8 @@ const LeaveUserForm = () => {
     }
   };
 
-  const MyShelf = ShelfItem.find((item) => item.name === "내 서재");
-  const bookCount = MyShelf ? MyShelf.books.length : 0;
-
   const Favorite = ShelfItem.find((item) => item.name === "즐겨찾기");
-  const bookCount2 = Favorite ? Favorite.books.length : 0;
+  const bookCount = Favorite ? Favorite.books.length : 0;
 
   return (
     <>
@@ -68,12 +65,8 @@ const LeaveUserForm = () => {
         <Box>
           <Who>순수한 지식인_123456의 서재</Who>
           <ShelfContent>
-            <p className="gray">서재에 기록된 도서</p>
-            <p className="black">{bookCount}권</p>
-          </ShelfContent>
-          <ShelfContent>
             <p className="gray">즐겨찾기 한 도서</p>
-            <p className="black">{bookCount2}권</p>
+            <p className="black">{bookCount}권</p>
           </ShelfContent>
         </Box>
         <Notice>

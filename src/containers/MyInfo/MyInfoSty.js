@@ -21,7 +21,6 @@ export const Inner = styled.div`
 export const Space = styled.div`
   border-bottom: 1px solid #dfdfdf;
   padding: 15px;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;

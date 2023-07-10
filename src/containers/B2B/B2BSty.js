@@ -31,7 +31,6 @@ export const LoginBtn = styled.button`
   margin-top: 7px;
   margin-left: 3px;
   letter-spacing: -1.2px;
-  cursor: pointer;
   :hover& {
     opacity: 1;
   }

@@ -18,7 +18,6 @@ export const Objects = styled.div`
     display: flex;
     flex-direction: column;
     margin-right: 15px;
-    cursor: pointer;
     video {
       border-radius: 10px;
     }

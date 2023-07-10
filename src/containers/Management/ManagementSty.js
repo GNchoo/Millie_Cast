@@ -57,7 +57,6 @@ export const Subscription = styled.div`
       border: 1px solid #333333;
       border-radius: 15px;
       align-items: center;
-      cursor: pointer;
       p {
         color: #333333;
         font-size: 12px;

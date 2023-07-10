@@ -15,25 +15,25 @@ const FindPW = () => {
   const [pw, setPw] = useState("");
   const [name, setName] = useState("");
 
-  const handleSubmit = async (e) => {
-    console.log("아이디: ", id);
-    console.log("비밀번호: ", pw);
-    console.log("이름: ", name);
+  // const handleSubmit = async (e) => {
+  //   console.log("아이디: ", id);
+  //   console.log("비밀번호: ", pw);
+  //   console.log("이름: ", name);
 
-    e.preventDefault();
-    try {
-      const response = await axios.post("http://192.168.0.66:8087/api/~~~", {
-        id: id,
-        pw: pw,
-        name: name,
-      });
-      alert("비밀번호 찾기 성공");
-      console.log(response.data);
-    } catch (error) {
-      alert("회원정보를 정확히 입력해주세요.");
-      console.log(error);
-    }
-  };
+  //   e.preventDefault();
+  //   try {
+  //     const response = await axios.post("http://192.168.0.66:8087/api/~~~", {
+  //       id: id,
+  //       pw: pw,
+  //       name: name,
+  //     });
+  //     alert("비밀번호 찾기 성공");
+  //     console.log(response.data);
+  //   } catch (error) {
+  //     alert("회원정보를 정확히 입력해주세요.");
+  //     console.log(error);
+  //   }
+  // };
 
   return (
     <LoginContainer>
@@ -43,7 +43,9 @@ const FindPW = () => {
           <div className="text1">비밀번호 찾기</div>
           <div className="text2">가입할 때 입력했던 정보를 확인합니다</div>
         </TextBox>
-        <LoginInput onSubmit={handleSubmit}>
+        <LoginInput
+        // onSubmit={handleSubmit}
+        >
           <InputDiv>
             <div>이름</div>
             <input

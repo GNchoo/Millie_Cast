@@ -17,7 +17,7 @@ const MyInfoForm = () => {
           <p>개인정보 수정</p>
           <span class="material-symbols-outlined">arrow_forward_ios</span>
         </Space>
-        <Space onClick={handleLeave}>
+        <Space style={{ cursor: "pointer" }} onClick={handleLeave}>
           <p>회원탈퇴</p>
           <span class="material-symbols-outlined">arrow_forward_ios</span>
         </Space>

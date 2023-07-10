@@ -18,9 +18,6 @@ import { randomImages } from "./FeedList";
 const FeedForm = () => {
   const [currentImages, setCurrentImages] = useState("");
   const [randomData, setRandomData] = useState([]);
-  const [like, setLike] = useState(false);
-  const [likeCount, setLikeCount] = useState(0);
-  // const [likedPostIds, setLikedPostIds] = useState([]);
 
   useEffect(() => {
     getRandomImage();
@@ -47,11 +44,14 @@ const FeedForm = () => {
               "https://d3udu241ivsax2.cloudfront.net/v3/images/common/adult-cover.7d03be7f61489e54049bc431f4f19e95.png"
           )
           .sort(() => 0.5 - Math.random())
-          .slice(0, 30);
+          .slice(0, 30)
+          .map((item) => ({
+            ...item,
+            like: false,
+            likeCount: 0,
+          }));
         setRandomData(randomFeedData);
         const a = randomFeedData.map((random) => random.idx);
-        console.log("idx", a);
-        console.log(randomFeedData);
       } catch (error) {
         console.log(error);
       }
@@ -60,17 +60,25 @@ const FeedForm = () => {
   }, []);
 
   //좋아요 연동
-  const handleLikeClick = async (feedId) => {
+  const handleLikeClick = async (feedId, index) => {
     try {
       const response = await axios.post(`${apiServer}/like/likes`, {
-        member_idx: `${localStorage.getItem("accessToken")}`,
-        feed_idx: feedId, // Pass the feedId to the request body
+        memberId: `${localStorage.getItem("id")}`,
+        feedId: feedId, // Pass the feedId to the request body
       });
       alert("좋아요 등록");
-      setLike(!like);
-      setLikeCount((prevCount) => (like ? prevCount - 1 : prevCount + 1));
-      console.log(response.data);
-      // setLikedPostIds((prevIds) => [...prevIds, feedId]);
+
+      setRandomData((prevData) => {
+        const newData = [...prevData];
+        newData[index] = {
+          ...newData[index],
+          like: !newData[index].like,
+          likeCount: newData[index].like
+            ? newData[index].likeCount - 1
+            : newData[index].likeCount + 1,
+        };
+        return newData;
+      });
     } catch (error) {
       console.log(error);
     }
@@ -118,13 +126,13 @@ const FeedForm = () => {
                   <div
                     className="icon"
                     onClick={() => {
-                      handleLikeClick(item.idx);
+                      handleLikeClick(item.idx, index);
                     }}
                   >
-                    <span class="material-icons">
-                      {!like ? "favorite_border" : "favorite"}
+                    <span className="material-icons">
+                      {!item.like ? "favorite_border" : "favorite"}
                     </span>
-                    <span>{likeCount}</span>
+                    <span>{item.likeCount}</span>
                   </div>
                 </Icons>
               </Recommend>

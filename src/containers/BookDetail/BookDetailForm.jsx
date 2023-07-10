@@ -77,6 +77,7 @@ const BookDetailForm = () => {
         }
       );
       const data = response.data.documents;
+      console.log(data);
       setCurrentBook(data);
       setBookItems(data.slice(0, 1));
       // ISBN만 꺼내기
@@ -117,7 +118,10 @@ const BookDetailForm = () => {
   //즐겨찾기
   const handleFavorite = async () => {
     try {
-      const response = await axios.post(`${apiServer}/api/~?`, { idx: isIsbn });
+      const response = await axios.post(`${apiServer}/bookmark/add`, {
+        memberId: `${localStorage.getItem("id")}`,
+        bookinfoId: isIsbn,
+      });
       console.log(response.data); // 서버 응답 데이터 출력
       setFavorite(!favorite);
     } catch (error) {

@@ -23,7 +23,6 @@ export const Click = styled.div`
     margin-right: 10px;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
     .material-icons {
       font-size: 19px;
       color: #242424;
@@ -68,7 +67,6 @@ export const NoImage = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
     p {
       font-size: 16px;
       font-weight: 800;
@@ -102,7 +100,6 @@ export const Post = styled.div`
   border-radius: 15px;
   overflow: hidden;
   margin-right: 20px;
-  cursor: pointer;
   .thumbnail {
     position: relative;
     height: 70%;

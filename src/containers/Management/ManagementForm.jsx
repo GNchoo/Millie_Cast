@@ -98,16 +98,25 @@ const ManagementForm = () => {
               <div key={item.title} className="title">
                 {item.title}
               </div>
-              {item.content.map((i) => (
-                <Links to={i.to}>
+              {item.content.map((i) =>
+                i.to === "" ? (
                   <div key={i.name} className="name">
                     <p>{i.name}</p>
                     <span class="material-symbols-outlined">
                       arrow_forward_ios
                     </span>
                   </div>
-                </Links>
-              ))}
+                ) : (
+                  <Links to={i.to}>
+                    <div key={i.name} className="name">
+                      <p>{i.name}</p>
+                      <span class="material-symbols-outlined">
+                        arrow_forward_ios
+                      </span>
+                    </div>
+                  </Links>
+                )
+              )}
             </Menu>
           ))}
         </MenuContainer>
