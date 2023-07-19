@@ -10,7 +10,6 @@ npm 패키지 설치
 ### `npm start`
 
 
-서버 실행
 
-### `http://iotsam.com/`
 
+### '[바로 실행] ([링크](http://iotsam.com/)http://iotsam.com/)`
